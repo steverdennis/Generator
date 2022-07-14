@@ -51,6 +51,9 @@ fi
 if test "$GOPT_ENABLE_NEUTRAL_HEAVY_LEPTON" = "YES"; then
   phys_libs="$phys_libs -lGPhNHL "
 fi
+if test "$GOPT_ENABLE_DARK_NEUTRINO" = "YES"; then
+  phys_libs="$phys_libs -lGPhDNuEG -lGPhDNuXS "
+fi
 
 # Libraries from GENIE/Generator/Tools
 # (standard)
