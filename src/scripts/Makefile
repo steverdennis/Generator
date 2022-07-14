@@ -17,8 +17,10 @@ doxygen: FORCE
 install: FORCE
 	cp setup/genie-config $(GENIE_BIN_PATH); \
 	cp gcint/genie $(GENIE_BIN_PATH); \
+	cp gcint/pygenie $(GENIE_BIN_PATH); \
 	chmod 755 $(GENIE_BIN_PATH)/genie-config; \
 	chmod 755 $(GENIE_BIN_PATH)/genie; 
+	chmod 755 $(GENIE_BIN_PATH)/pygenie; 
 
 #
 #install_db: FORCE
@@ -29,6 +31,7 @@ install: FORCE
 clean: FORCE
 	$(RM) $(GENIE_BIN_PATH)/genie-config 
 	$(RM) $(GENIE_BIN_PATH)/genie
+	$(RM) $(GENIE_BIN_PATH)/pygenie
 
 #
 #clean_db: FORCE
@@ -38,6 +41,7 @@ clean: FORCE
 distclean: FORCE
 	$(RM) $(GENIE_BIN_INSTALLATION_PATH)/genie-config 
 	$(RM) $(GENIE_BIN_INSTALLATION_PATH)/genie
+	$(RM) $(GENIE_BIN_INSTALLATION_PATH)/pygenie
 
 FORCE:
 
