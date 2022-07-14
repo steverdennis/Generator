@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Loads interactive python environment with GENIE
+# Steve Dennis, May 2014
+
+if hash ipython 2>/dev/null; then
+    #~ mypy="ipython --autoindent "
+    mypy="ipython"
+else
+    mypy=python
+fi
+
+${mypy} -i "${GENIE}"/src/scripts/gcint/genie.py $*
+
