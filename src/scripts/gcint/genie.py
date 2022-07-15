@@ -74,6 +74,10 @@ else:
   for member_name in dir(ROOT.genie):
     if member_name[:2] == "__": continue
     if "::" in member_name: continue
-    member = getattr(ROOT.genie,member_name)
-    if type(member) == "module": continue
-    locals()[member_name] = member
+    try:
+      member = getattr(ROOT.genie,member_name)
+      if type(member) == "module": continue
+      locals()[member_name] = member
+    except AttributeError:
+      pass
+      
